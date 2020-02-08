@@ -18,6 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: node index.js  > /dev/null
+    - run: node index.js  &
+    - run: killall node
       env:
         CI: true
