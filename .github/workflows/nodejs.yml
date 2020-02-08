@@ -19,6 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: node index.js  &
+    - run: ./node_modules/.bin/cypress run
     - run: killall node
       env:
         CI: true
